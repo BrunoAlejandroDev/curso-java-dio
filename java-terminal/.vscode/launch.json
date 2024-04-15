@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "scanner",
+            "request": "launch",
+            "mainClass": "scanner",
+            "projectName": "java-terminal_e20fa520"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -22,7 +29,7 @@
             "name": "MinhaClasse",
             "request": "launch",
             "mainClass": "MinhaClasse",
-            "projectName": "java-terminal_e20fa520",
-        },
+            "projectName": "java-terminal_e20fa520"
+        }
     ]
 }
