@@ -1,4 +1,4 @@
-public class resultadoEscolar {
+public class ResultadoEscolar {
     public static void main(String[] args) {
         double notaAluno = 7.2;
 
