@@ -27,5 +27,7 @@ public class scanner {
         System.out.println("Sua idade: " + idade + " anos");
         System.out.println("Sua altura: " + altura + "cm");
         System.out.println("---------");
+
+        scanner.close();
     }
 }
