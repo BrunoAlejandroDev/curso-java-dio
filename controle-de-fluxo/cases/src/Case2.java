@@ -25,17 +25,16 @@ public class Case2 {
         int candidatoAtual = 0;
         int candidatosSelecionados = 0;
         
-        for (int i = candidatoAtual; i <= candidatos.length; i++) {
-            String candidato = candidatos[i];
+        while (candidatosSelecionados < 5 && candidatoAtual < candidatos.length) {
             double salarioPretendido = valorPretendido();
+            String candidato = candidatos[candidatoAtual];
             System.out.printf("O candidato %s solicitou o seguinte valor: %.2f\n", candidato, salarioPretendido);
 
-            while (candidatosSelecionados < 5 && i <= candidato.length()) {
-                if (salarioBase >= salarioPretendido) {
-                    System.out.println("O candidato " + candidato + " foi selecionado para a vaga");
-                }
+            if (salarioBase >= salarioPretendido) {
+                System.out.println("O candidato " + candidato + " foi selecionado para a vaga");
                 candidatosSelecionados++;
             }
+            candidatoAtual++;
         }
     }
 
