@@ -26,8 +26,8 @@ public class Case2 {
         int candidatosSelecionados = 0;
         
         while (candidatosSelecionados < 5 && candidatoAtual < candidatos.length) {
-            double salarioPretendido = valorPretendido();
             String candidato = candidatos[candidatoAtual];
+            double salarioPretendido = valorPretendido();
             System.out.printf("O candidato %s solicitou o seguinte valor: %.2f\n", candidato, salarioPretendido);
 
             if (salarioBase >= salarioPretendido) {
