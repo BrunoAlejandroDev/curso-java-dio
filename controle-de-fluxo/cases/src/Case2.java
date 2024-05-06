@@ -1,51 +1,42 @@
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Case2 {
     public static void main(String[] args) {
         selecaoCandidatos();
     }
 
-    public static void analisarCandidatos (double salarioPretendido) {
-        double salarioBase = 2000.0;
-        salarioPretendido = valorPretendido();
-
-        if (salarioBase > salarioPretendido) {
-            System.out.println("LIGAR PARA O CANDIDATO");
-        }
-        else if (salarioBase == salarioPretendido) {
-            System.out.println("LIGAR PARA O CANDIDATO COM CONTRA PROPOSTA");
-        }
-        else {
-            System.out.println("AGUARDANDO RESULTADO DOS DEMAIS CANDIDATOS");
-        }
-    }
-
-    public static String selecaoCandidatos () {
+    public static List<String> selecaoCandidatos () {
         String [] candidatos = {"FELIPE", "BRUNO", "MARCIA", "JULIA", "PAULO", "AUGUSTO", "MÔNICA", "MIRELA", "DANIELA", "JORGE"};
         double salarioBase = 2000.0;
         int candidatoAtual = 0;
         int numCandidatosSelecionados = 0;
-        StringBuilder candidatosSelecionados = new StringBuilder();
+
+        //* Criando uma lista para armazenar os nomes dos candidatos selecionados
+        List<String> candidatosSelecionados = new ArrayList<>();
         
+        //* Loop para percorrer a lista de candidatos e verificar quais vão ser selecionados
         while (numCandidatosSelecionados < 5 && candidatoAtual < candidatos.length) {
             String candidato = candidatos[candidatoAtual];
             double salarioPretendido = valorPretendido();
             System.out.printf("O candidato %s solicitou o seguinte valor: %.2f\n", candidato, salarioPretendido);
 
             if (salarioBase >= salarioPretendido) {
-                //System.out.println("O candidato " + candidato + " foi selecionado para a vaga");
                 numCandidatosSelecionados++;
-                candidatosSelecionados.append(candidato).append("\n");
-                
+                candidatosSelecionados.add(candidato);
             }
             candidatoAtual++;
         }
 
-        return candidatosSelecionados.toString();
-        
-        // System.out.println("------");
-        // System.out.print("Lista de candidatos selecionados:\n" + candidatosSelecionados.toString());
-        // System.out.println("------");
+        //* Retorno da lista de candidatos selecionados
+        return candidatosSelecionados;
+    }
+
+    public static void mostrarCandidatosSelecionados(List<String> candidatos) {
+        for (String candidato : candidatos) {
+            System.out.println("Candidato selecionado: " + candidato);
+        }
     }
 
     public static double valorPretendido() {
