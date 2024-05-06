@@ -4,7 +4,8 @@ import java.util.List;
 
 public class Case2 {
     public static void main(String[] args) {
-        selecaoCandidatos();
+        List<String> candidatosSelecionados = selecaoCandidatos();
+        mostrarCandidatosSelecionados(candidatosSelecionados);
     }
 
     public static List<String> selecaoCandidatos () {
@@ -28,6 +29,7 @@ public class Case2 {
             }
             candidatoAtual++;
         }
+        System.out.println();
 
         //* Retorno da lista de candidatos selecionados
         return candidatosSelecionados;
