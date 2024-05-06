@@ -7,6 +7,7 @@ public class Case2 {
 
     public static void analisarCandidatos (double salarioPretendido) {
         double salarioBase = 2000.0;
+        salarioPretendido = valorPretendido();
 
         if (salarioBase > salarioPretendido) {
             System.out.println("LIGAR PARA O CANDIDATO");
@@ -19,23 +20,32 @@ public class Case2 {
         }
     }
 
-    public static void selecaoCandidatos () {
+    public static String selecaoCandidatos () {
         String [] candidatos = {"FELIPE", "BRUNO", "MARCIA", "JULIA", "PAULO", "AUGUSTO", "MÔNICA", "MIRELA", "DANIELA", "JORGE"};
         double salarioBase = 2000.0;
         int candidatoAtual = 0;
-        int candidatosSelecionados = 0;
+        int numCandidatosSelecionados = 0;
+        StringBuilder candidatosSelecionados = new StringBuilder();
         
-        while (candidatosSelecionados < 5 && candidatoAtual < candidatos.length) {
+        while (numCandidatosSelecionados < 5 && candidatoAtual < candidatos.length) {
             String candidato = candidatos[candidatoAtual];
             double salarioPretendido = valorPretendido();
             System.out.printf("O candidato %s solicitou o seguinte valor: %.2f\n", candidato, salarioPretendido);
 
             if (salarioBase >= salarioPretendido) {
-                System.out.println("O candidato " + candidato + " foi selecionado para a vaga");
-                candidatosSelecionados++;
+                //System.out.println("O candidato " + candidato + " foi selecionado para a vaga");
+                numCandidatosSelecionados++;
+                candidatosSelecionados.append(candidato).append("\n");
+                
             }
             candidatoAtual++;
         }
+
+        return candidatosSelecionados.toString();
+        
+        // System.out.println("------");
+        // System.out.print("Lista de candidatos selecionados:\n" + candidatosSelecionados.toString());
+        // System.out.println("------");
     }
 
     public static double valorPretendido() {
