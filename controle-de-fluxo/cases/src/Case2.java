@@ -8,6 +8,7 @@ public class Case2 {
         mostrarCandidatosSelecionados(candidatosSelecionados);
     }
 
+    //? case 2
     public static List<String> selecaoCandidatos () {
         String [] candidatos = {"FELIPE", "BRUNO", "MARCIA", "JULIA", "PAULO", "AUGUSTO", "MÔNICA", "MIRELA", "DANIELA", "JORGE"};
         double salarioBase = 2000.0;
@@ -35,6 +36,7 @@ public class Case2 {
         return candidatosSelecionados;
     }
 
+    //? case 3
     public static void mostrarCandidatosSelecionados(List<String> candidatos) {
         for (String candidato : candidatos) {
             System.out.println("Candidato selecionado: " + candidato);
